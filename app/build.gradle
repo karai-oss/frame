@@ -14,6 +14,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // 日期格式
+        resValue "string" , "date_format" , "0"
+        manifestPlaceholders["app_icon"] = "@mipmap/ic_launcher"
+        manifestPlaceholders["app_name"] = "APP名称"
+        manifestPlaceholders["app_icon_round"] = "@mipmap/ic_launcher_round"
+
+
     }
 
     buildTypes {

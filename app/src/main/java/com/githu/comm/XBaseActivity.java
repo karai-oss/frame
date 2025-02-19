@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.githu.frame.R;
+
 /**
  * XBaseActivity  继承于 AppCompatActivity  是一个 活动基类
  *
@@ -17,5 +19,6 @@ public class XBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
     }
 }
