@@ -2,7 +2,9 @@ package com.githu.comm.utils;
 
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.githu.frame.R;
 
@@ -67,19 +69,24 @@ public class DateUtils {
      * <code>R.string.date_format</code> 格式代码  app 模块下面的 <code>resValue "string" , "date_format" , "0"</code> 设置
      *  对应 <code>dateFormatConfiguration</code> 中的索引值
      */
-    public String dateFormat(Date date) throws Exception {
-        String code = _context.getResources().getString(R.string.date_format);
-        if (!TextUtils.isDigitsOnly(code)) {
-            throw new Exception("请再build.gradle文件中填写正确的日期格式代码");
-        }
+    public String dateFormat(Date date)  {
+        try {
+            String code = _context.getResources().getString(R.string.date_format);
+            if (!TextUtils.isDigitsOnly(code)) {
+                Log.e("TAG", "dateFormat: 请再build.gradle文件中填写正确的日期格式代码 "  );
+                return "";
+            }
 
-        int formatCode = Integer.getInteger(code);
-        if (formatCode < 0 || formatCode >= dateFormatConfiguration.size()) {
-            return null;
+            int formatCode = Integer.getInteger(code);
+            if (formatCode < 0 || formatCode >= dateFormatConfiguration.size()) {
+                return null;
+            }
+            String formatStr = dateFormatConfiguration.get(formatCode);
+            SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
+            return sdf.format(date);
+        } catch (Resources.NotFoundException e) {
+            throw new RuntimeException(e);
         }
-        String formatStr = dateFormatConfiguration.get(formatCode);
-        SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
-        return sdf.format(date);
     }
 
 }
