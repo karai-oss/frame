@@ -25,6 +25,7 @@ android {
 
         // 请求URL地址
         resValue "string" , "BASE_URL" , "";
+        resValue "string" , "TOKEN" , "";
 
 
     }

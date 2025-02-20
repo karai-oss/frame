@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
+import com.githu.comm.request.HttpUtils;
 import com.githu.comm.utils.ImageUtils;
 
 /**
@@ -32,6 +33,9 @@ public abstract class XBaseBindingActivity<T extends ViewBinding> extends AppCom
         binding = inflaterBinding();
         initView();
         useEvent();
+        HttpUtils.Builder httpBuilder = new HttpUtils.Builder();
+        httpBuilder.setContext(this);
+        httpBuilder.setTimeOut(2000);
     }
 
     public CommentViewModel commViewModel(){
