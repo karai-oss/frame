@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.DrawableRes;
 
 import com.githu.comm.asyc.XHandle;
+import com.githu.comm.bind.CommentViewModel;
 import com.githu.frame.MainActivity;
 
 import java.util.Objects;
@@ -35,7 +36,7 @@ public class ImageUtils {
     }
 
     public static void setImage(ImageView view, @DrawableRes int id) {
-        Objects.requireNonNull(MainActivity.commentViewModel.activityMutableLiveData.getValue()).runOnUiThread(() -> {
+        Objects.requireNonNull(CommentViewModel.activityMutableLiveData.getValue()).runOnUiThread(() -> {
             view.setBackgroundResource(id);
         });
     }
@@ -48,7 +49,7 @@ public class ImageUtils {
      * @param mipmapId mipMap资源ID
      */
     public static void setBitmapImage(ImageView view, int mipmapId) {
-        Objects.requireNonNull(MainActivity.commentViewModel.activityMutableLiveData.getValue()).runOnUiThread(() -> {
+        Objects.requireNonNull(CommentViewModel.activityMutableLiveData.getValue()).runOnUiThread(() -> {
             view.setBackgroundResource(mipmapId);
         });
     }

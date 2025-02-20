@@ -21,7 +21,7 @@ public class CommentViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public MutableLiveData<Activity> activityMutableLiveData = new MutableLiveData<>();
+    public static MutableLiveData<Activity> activityMutableLiveData = new MutableLiveData<>();
 
     public CommentViewModel getInstance() {
         return ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(CommentViewModel.class);
