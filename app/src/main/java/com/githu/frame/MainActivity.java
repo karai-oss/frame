@@ -2,6 +2,7 @@ package com.githu.frame;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,11 +15,14 @@ import androidx.core.view.WindowInsetsCompat;
 import com.githu.comm.asyc.XHandle;
 import com.githu.comm.bind.CommentViewModel;
 import com.githu.comm.bind.XBaseBindingActivity;
+import com.githu.comm.request.RequestCode;
 import com.githu.comm.utils.DateUtils;
 import com.githu.comm.utils.ImageUtils;
 import com.githu.frame.databinding.ActivityMainBinding;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends XBaseBindingActivity<ActivityMainBinding> {
@@ -32,6 +36,12 @@ public class MainActivity extends XBaseBindingActivity<ActivityMainBinding> {
     @Override
     public void initData() {
 
+        Map<String ,String> param = new HashMap<>();
+        param.put("day" , "7");
+        param.put("original" , "0");
+        param.put("rid" , "31");
+        request.doGet("ranking/region1" ,  param ,false ,"100");
+
 
 
     }
@@ -44,5 +54,19 @@ public class MainActivity extends XBaseBindingActivity<ActivityMainBinding> {
     @Override
     public void useEvent() {
 
+    }
+
+    @Override
+    public void requestSuccess(RequestCode successCode) {
+        super.requestSuccess(successCode);
+
+
+        Log.e("TAG", "requestSuccess: " + successCode.msg );
+    }
+
+    @Override
+    public void requestError(RequestCode errorCode) {
+        super.requestError(errorCode);
+        Log.e("TAG", "requestError: " + errorCode.msg );
     }
 }

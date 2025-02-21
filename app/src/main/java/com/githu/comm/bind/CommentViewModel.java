@@ -21,6 +21,10 @@ public class CommentViewModel extends AndroidViewModel {
         super(application);
     }
 
+
+    /**
+     * 当前Android开发包 全局activity 对象
+     */
     public static MutableLiveData<Activity> activityMutableLiveData = new MutableLiveData<>();
 
     public CommentViewModel getInstance() {

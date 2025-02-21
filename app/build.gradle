@@ -20,16 +20,28 @@ android {
         manifestPlaceholders["app_name"] = "APP名称"
         manifestPlaceholders["app_icon_round"] = "@mipmap/ic_launcher_round"
 
-        // 日期格式
-        resValue "string" , "date_format" , "0"
 
-        // 请求URL地址
-        resValue "string" , "BASE_URL" , "";
-        resValue "string" , "TOKEN" , "";
+        // https://api.bilibili.com/x/web-interface/ranking/region?day=7&original=0&rid=31
+        resValue "string", "date_format", "0"      // 日期格式
+        resValue "string", "BASE_URL", "https://api.bilibili.com/x/web-interface"; // 请求URL地址
+        resValue "string", "TOKEN", "";  // 请求token 的键名
+        resValue "string", "request_success_code", "200"; // 请求成功code
+        resValue "string", "request_error_code", "0";  //  请求失败code
 
 
     }
 
+    productFlavors {
+
+    }
+
+    android.applicationVariants.forEach {
+        android.productFlavors.all {
+
+
+            output = ""
+        }
+    }
 
     buildTypes {
         release {
@@ -42,7 +54,7 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
 }
