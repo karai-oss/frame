@@ -15,7 +15,7 @@ public class StringUtils {
     /**
      * 生成不带 - 的UUID 字符串
      */
-    public static String uuid(){
-        return UUID.fromString(String.valueOf(System.currentTimeMillis())).toString().replaceAll("-" , "");
+    public  String uuid(){
+        return UUID.fromString(UUID.randomUUID().toString()).toString().replaceAll("-" , "");
     }
 }

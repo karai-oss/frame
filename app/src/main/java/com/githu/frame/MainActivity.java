@@ -37,7 +37,9 @@ public class MainActivity extends XBaseBindingActivity<ActivityMainBinding> {
     public void initData() {
 
 
-        Log.e("TAG", "initData: "+dateUtils(this).dateFormat(new Date()));
+
+
+        Log.e("TAG", "initData: "+stringUtils().uuid());
     }
 
     @Override

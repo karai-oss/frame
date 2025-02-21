@@ -21,7 +21,7 @@ android {
         manifestPlaceholders["app_icon_round"] = "@mipmap/ic_launcher_round"
 
 
-        resValue "string", "date_format", "1"      // 日期格式
+        resValue "string", "date_format", "8"      // 日期格式
         resValue "string", "BASE_URL", "https://api.bilibili.com/x/web-interface"; // 请求URL地址
         resValue "string", "TOKEN", "";  // 请求token 的键名
         resValue "string", "request_success_code", "200"; // 请求成功code
