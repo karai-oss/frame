@@ -36,14 +36,8 @@ public class MainActivity extends XBaseBindingActivity<ActivityMainBinding> {
     @Override
     public void initData() {
 
-        Map<String ,String> param = new HashMap<>();
-        param.put("day" , "7");
-        param.put("original" , "0");
-        param.put("rid" , "31");
-        request.doGet("ranking/region1" ,  param ,false ,"100");
 
-
-
+        Log.e("TAG", "initData: "+dateUtils(this).dateFormat(new Date()));
     }
 
     @Override

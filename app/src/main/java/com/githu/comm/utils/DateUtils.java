@@ -1,6 +1,7 @@
 package com.githu.comm.utils;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.TextUtils;
@@ -21,15 +22,15 @@ import java.util.List;
  */
 public class DateUtils {
     public static final List<String> dateFormatConfiguration = List.of(
-            "YYYY-MM-DD",
-            "YYYY-MM-DD HH:mm:ss",
-            "YYYY-MM-DD hh:mm:ss",
-            "YYYY/MM/DD",
-            "YYYY/MM/DD HH:mm:ss",
-            "YYYY/MM/DD hh:mm:ss",
-            "YYYY年MM月DD日",
-            "YYYY年MM月DD日 HH:mm:ss",
-            "YYYY年MM月DD日 hh:mm:ss",
+            "YYYY-MM-dd",
+            "YYYY-MM-dd HH:mm:ss",
+            "YYYY-MM-dd hh:mm:ss",
+            "YYYY/MM/dd",
+            "YYYY/MM/dd HH:mm:ss",
+            "YYYY/MM/dd hh:mm:ss",
+            "YYYY年MM月dd日",
+            "YYYY年MM月dd日 HH:mm:ss",
+            "YYYY年MM月dd日 hh:mm:ss",
             ""
     );
 
@@ -57,7 +58,7 @@ public class DateUtils {
             return null;
         }
         String formatStr = dateFormatConfiguration.get(formatCode);
-        SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
         return sdf.format(date);
     }
 
@@ -77,12 +78,12 @@ public class DateUtils {
                 return "";
             }
 
-            int formatCode = Integer.getInteger(code);
+            int formatCode = Integer.parseInt(code);
             if (formatCode < 0 || formatCode >= dateFormatConfiguration.size()) {
                 return null;
             }
             String formatStr = dateFormatConfiguration.get(formatCode);
-            SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
             return sdf.format(date);
         } catch (Resources.NotFoundException e) {
             throw new RuntimeException(e);

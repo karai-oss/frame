@@ -1,8 +1,11 @@
 package com.githu.comm.bind;
 
 
-import android.text.format.DateUtils;
 
+
+import android.content.Context;
+
+import com.githu.comm.utils.DateUtils;
 import com.githu.comm.utils.ImageUtils;
 import com.githu.comm.utils.StringUtils;
 
@@ -19,8 +22,8 @@ public interface IApplicationUtils {
     public default StringUtils stringUtils() {
         return new StringUtils();
     }
-    public default DateUtils dateUtils() {
-        return new DateUtils();
+    public default DateUtils dateUtils(Context context) {
+        return  DateUtils.getInstance(context);
     }
 
 }
