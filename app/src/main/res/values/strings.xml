@@ -1,3 +1,9 @@
 <resources>
 
+    <declare-styleable name="XBottomNavigation">
+        <attr name="tab_item_unselect_color" format="color"/>
+        <attr name="tab_item_selected_color" format="color"/>
+        <attr name="navigation_shadow_color" format="color"/>
+    </declare-styleable>
+
 </resources>
