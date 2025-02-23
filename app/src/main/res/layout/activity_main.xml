@@ -8,14 +8,25 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello world"
+        />
+
     <com.githu.comm.components.XBottomNavigation.XBottomNavigation
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         app:tab_item_selected_color="#f4ea2a"
         android:id="@+id/xbt_bt"
         android:layout_alignParentBottom="true"
         app:navigation_shadow_color="#65B1B1B1"
         app:tab_item_unselect_color="#000"
         />
+
+<!--    <com.githu.comm.components.XLoading.XLoading-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
 
 </RelativeLayout>

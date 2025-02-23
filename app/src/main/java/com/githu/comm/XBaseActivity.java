@@ -43,6 +43,7 @@ public abstract class XBaseActivity extends AppCompatActivity implements IReques
         initData();
         initView();
         useEvent();
+
     }
 
     @Override
