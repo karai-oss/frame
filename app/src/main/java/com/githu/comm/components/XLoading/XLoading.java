@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,8 @@ public class XLoading extends Dialog {
 
     public XLoading(@NonNull Context context) {
         super(context);
+        // 设置dialg背景透明
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         DefualtLoadingView defualtLoadingView = new DefualtLoadingView(getContext());
         asLoading(defualtLoadingView);
     }
