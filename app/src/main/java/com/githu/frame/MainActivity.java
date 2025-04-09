@@ -43,6 +43,8 @@ public class MainActivity extends XBaseActivity {
         xbt.setInnerLayoutView(R.layout.layout_xbt_item, menus);
 
 
+
+
     }
 
     @Override

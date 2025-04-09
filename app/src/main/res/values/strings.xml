@@ -6,4 +6,12 @@
         <attr name="navigation_shadow_color" format="color"/>
     </declare-styleable>
 
+
+    <declare-styleable name="ExDrawerLayout">
+        <attr name="min_fling_distance" format="integer|dimension"/>
+        <attr name="topOffsetGap" format="integer|dimension"/>
+        <attr name="_minHeight" format="integer|dimension"/>
+        <attr name="flingScale" format="integer"/>
+        <attr name="bgColor" format="color"/>
+    </declare-styleable>
 </resources>
